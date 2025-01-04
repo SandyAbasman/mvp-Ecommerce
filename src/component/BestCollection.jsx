@@ -12,6 +12,8 @@ function BestCollection() {
     SetBestCollection(products.slice(0, 6));
   }, [products]);
 
+  console.log(products);
+
   return bestCollection.length === 0 ? (
     <LoadingProduct />
   ) : (

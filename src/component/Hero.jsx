@@ -11,13 +11,11 @@ function Hero() {
           </p>
         </div>
         <div className="w-full h-auto">
-          <button className="bg-[#2DC071] text-[1.3rem] font-bold  px-[2.5rem] py-[0.9375rem] text-white rounded-sm ">
+          <button className=" hover:bg-[#2DC071]/50 bg-[#2DC071] text-[1.3rem] font-bold  px-[2.5rem] py-[0.9375rem] text-white rounded-sm ">
             SHOP NOW
           </button>
         </div>
       </div>
-
-      
     </div>
   );
 }

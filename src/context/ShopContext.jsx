@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
 
@@ -8,6 +9,8 @@ const ShopContextProvider = ({ children }) => {
 
   const currency = "AED";
   const deliveryFee = 10;
+  const [search, setSearch] = useState("");
+  const [showSearch, setShowSearch] = useState(true);
 
   const productData = async () => {
     const res = await fetch("https://fakestoreapi.com/products");
@@ -23,6 +26,10 @@ const ShopContextProvider = ({ children }) => {
     products,
     currency,
     deliveryFee,
+    search,
+    setSearch,
+    showSearch,
+    setShowSearch,
   };
 
   return <shopContext.Provider value={value}>{children}</shopContext.Provider>;
