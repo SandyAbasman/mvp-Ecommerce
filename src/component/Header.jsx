@@ -3,8 +3,11 @@ import storeLogo from "../assets/storeLogo.png";
 import { FaRegUser } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
+import { useContext } from "react";
+import { shopContext } from "../context/ShopContext";
 
 const Header = () => {
+  const { setShowSearch } = useContext(shopContext);
   return (
     <header className="w-full h-auto flex flex-row justify-between bg-white items-center px-8">
       <Link to={"/"} className="w-1/2 ">
@@ -29,7 +32,11 @@ const Header = () => {
         <p className=" font-semibold">
           <span>Login</span>/<span>Register</span>
         </p>
-        <CiSearch size={30} className="font-extrabold" />
+        <CiSearch
+          onClick={()=>setShowSearch(true)}
+          size={30}
+          className="font-extrabold"
+        />
         <div className="group relative">
           <FaRegUser className="cursor-pointer" size={30} />
           <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">

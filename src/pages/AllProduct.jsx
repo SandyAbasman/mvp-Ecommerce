@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useContext } from "react";
 import { shopContext } from "../context/ShopContext";
 import { useState, useEffect } from "react";
@@ -5,10 +6,12 @@ import ProductItem from "../component/ProductItem";
 // import LoadingProduct from "../component/LoadingProduct";
 
 const AllProduct = () => {
-  const { products } = useContext(shopContext);
+  const { products, search, showSearch  } = useContext(shopContext);
   const [filterProduct, setFilterProduct] = useState([]);
   const [category, setCategory] = useState([]);
   const [sortType, setSortType] = useState("relevant");
+
+  
 
   const toggleCategory = (e) => {
     if (category.includes(e.target.value)) {
@@ -20,6 +23,10 @@ const AllProduct = () => {
 
   const applyFilter = () => {
     let productCopy = products.slice();
+
+    if(showSearch && search){
+        productCopy = productCopy.filter(item => item.title.toLowerCase().includes(search.toLowerCase()))
+    }
 
     if (category.length > 0) {
       productCopy = productCopy.filter((item) =>
@@ -53,7 +60,7 @@ const AllProduct = () => {
 
   useEffect(() => {
     applyFilter();
-  }, [category]);
+  }, [category,search,showSearch]);
 
   useEffect(() => {
     sortProduct();
