@@ -9,7 +9,7 @@ function BestCollection() {
   const [bestCollection, SetBestCollection] = useState([]);
 
   useEffect(() => {
-    SetBestCollection(products.slice(0, 6));
+    SetBestCollection(products.splice(0, 4));
   }, [products]);
 
   console.log(products);
@@ -17,15 +17,15 @@ function BestCollection() {
   return bestCollection.length === 0 ? (
     <LoadingProduct />
   ) : (
-    <div className="w-full h-auto flex  flex-col justify-start items-center px-20">
+    <div className="w-full h-auto flex  flex-col justify-start  ">
       <Title
         title1="Featured Products"
         title2="BESTSELLER PRODUCTS"
         description="Problems trying to resolve the conflict between"
       />
       {/* showing products */}
-      <div className="">
-        <div className="grid grid-cols-3 py-4 gap-2 justify-items-center ">
+      <div className="w-full h-auto">
+        <div className=" w-full  grid grid-cols-4 flex-wrap  gap-8 justify-items-center ">
           {bestCollection.map((item) => (
             <ProductItem
               key={item.id}
@@ -33,6 +33,7 @@ function BestCollection() {
               name={item.title}
               image={item.image}
               price={item.price}
+              rating={item.rating}
             />
           ))}
         </div>

@@ -23,7 +23,7 @@ const router = createBrowserRouter(
 function App() {
   return (
     <ShopContextProvider>
-      <RouterProvider router={router} />
+      <RouterProvider router={router}  />
     </ShopContextProvider>
   );
 }
