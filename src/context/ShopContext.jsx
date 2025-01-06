@@ -11,7 +11,19 @@ const ShopContextProvider = ({ children }) => {
   const deliveryFee = 10;
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
+  const [cartItems, setCartItems] = useState({});
 
+  const addToCart = async (itemId) => {
+    let cartData = structuredClone(cartItems);
+
+    if (cartData[itemId]) {
+      cartData[itemId] += 1;
+    } else {
+      cartData[itemId] = {};
+      cartData[itemId] = 1;
+    }
+    setCartItems(cartData);
+  };
   const productData = async () => {
     const res = await fetch("https://fakestoreapi.com/products");
     const productList = await res.json();
@@ -20,7 +32,22 @@ const ShopContextProvider = ({ children }) => {
 
   useEffect(() => {
     productData();
-  }, []);
+  }, [products]);
+
+  const getCartCount = () => {
+    let totalCount = 0;
+
+    for (const items in cartItems) {
+      try {
+        if (cartItems[items] > 0) {
+          totalCount += cartItems[items];
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    return totalCount;
+  };
 
   const value = {
     products,
@@ -30,7 +57,14 @@ const ShopContextProvider = ({ children }) => {
     setSearch,
     showSearch,
     setShowSearch,
+    cartItems,
+    addToCart,
+    getCartCount,
   };
+
+  // useEffect(() => {
+  //   console.log(cartItems);
+  // }, [cartItems]);
 
   return <shopContext.Provider value={value}>{children}</shopContext.Provider>;
 };

@@ -5,7 +5,7 @@ import SearchBar from "./component/SearchBar";
 
 const RootLayout = () => {
   return (
-    <div>
+    <div className="">
       <Header />
       <SearchBar />
       <Outlet />

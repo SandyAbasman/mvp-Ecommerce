@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { shopContext } from "../context/ShopContext";
 import ProductItem from "./ProductItem";
 import { Title } from "./Title";
+import LoadingProduct from "./LoadingProduct";
 
 const RelatedProduct = ({ category }) => {
   const { products } = useContext(shopContext);
@@ -26,19 +27,23 @@ const RelatedProduct = ({ category }) => {
           "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores alias, obcaecati ut qui, "
         }
       />
-      <div className="w-full grid grid-cols-4 flex-wrap  gap-8 justify-items-center">
-        {related.map((item, index) => (
-          <div key={index}>
-            <ProductItem
-              id={item.id}
-              name={item.title}
-              image={item.image}
-              price={item.price}
-              rating={item.rating}
-            />
-          </div>
-        ))}
-      </div>
+      {related.length === 0 ? (
+        <LoadingProduct />
+      ) : (
+        <div className="w-full grid grid-cols-4 flex-wrap  gap-8 justify-items-center">
+          {related.map((item, index) => (
+            <div key={index}>
+              <ProductItem
+                id={item.id}
+                name={item.title}
+                image={item.image}
+                price={item.price}
+                rating={item.rating}
+              />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

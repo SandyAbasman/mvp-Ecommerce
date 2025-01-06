@@ -2,13 +2,14 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { shopContext } from "../context/ShopContext";
-import LoadingProduct from "./LoadingProduct";
+
 import RelatedProduct from "./RelatedProduct";
 import { IoIosStar } from "react-icons/io";
+import LoadingProduct from "./LoadingProduct";
 
 const Product = () => {
   const { productId } = useParams();
-  const { currency } = useContext(shopContext);
+  const { currency, addToCart } = useContext(shopContext);
   //
   const [productData, setProductData] = useState(false);
 
@@ -29,11 +30,15 @@ const Product = () => {
 
   const stars = Array(5).fill(0);
 
+  //   productData === false ? (
+  //     <SplashScreen/>
+  //   )
+
   return productData === false ? (
     <LoadingProduct />
   ) : (
     <div>
-      <div className=" w-full h-auto flex flex-row justify-start items-start">
+      <div className=" w-full h-auto flex flex-row justify-start items-start px-40">
         <div className="w-1/2 h-auto flex flex-row justify-center bg-[#ffff]/20">
           <img
             className="w-1/2 h-auto "
@@ -49,9 +54,8 @@ const Product = () => {
               <div className="flex flex-row gap-2 pb-4">
                 {stars.map((_, index) => {
                   return (
-                    <>
+                    <div key={index}>
                       <IoIosStar
-                        key={index}
                         size={24}
                         color={
                           productData.rating.rate > index
@@ -59,7 +63,7 @@ const Product = () => {
                             : colors.grey
                         }
                       />
-                    </>
+                    </div>
                   );
                 })}
                 <p className="">({productData.rating.rate}stars) </p>
@@ -87,7 +91,10 @@ const Product = () => {
           </div>
 
           <div className="w-full h-auto">
-            <button className="bg-black p-4 w-full h-auto text-white">
+            <button
+              onClick={() => addToCart(productData.id)}
+              className="bg-black p-4 w-full h-auto text-white"
+            >
               Add to cart{" "}
             </button>
           </div>

@@ -1,14 +1,14 @@
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
+// import { useEffect } from "react";
 
 const SplashScreen = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    setTimeout(() => {
-      navigate("/home");
-    }, 3000); // 3 seconds delay
-  }, [navigate]);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     navigate("/home");
+  //   }, 3000); // 3 seconds delay
+  // }, [navigate]);
 
   return (
     <div className="w-screen h-screen bg-purple-700 ">

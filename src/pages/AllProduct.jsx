@@ -73,39 +73,42 @@ const AllProduct = () => {
         <div className="min-w-60">
           <p>Filters</p>
           <div className="border flex gap-8 flex-row ">
-            <p>Categories</p>
+            <p className="text-lg font-semibold">Categories</p>
             <div className="flex  flex-row justify-start items-center gap-1">
               <input
                 type="checkbox"
                 onChange={toggleCategory}
+                className=" w-8 h-8"
                 value={"men's clothing"}
-                className=""
               />
-              <p>Men</p>
+              <p className="text-lg font-semibold">Men</p>
             </div>
             <div className="flex  flex-row justify-start items-center gap-1">
               <input
                 type="checkbox"
                 onChange={toggleCategory}
+                className=" w-8 h-8"
                 value={"women's clothing"}
               />
-              <p>Women</p>
+              <p className="text-lg font-semibold">Women</p>
             </div>
             <div className="flex  flex-row justify-start items-center gap-1">
               <input
                 type="checkbox"
                 onChange={toggleCategory}
+                className=" w-8 h-8"
                 value={"jewelery"}
               />
-              <p>jewelery</p>
+              <p className="text-lg font-semibold">jewelery</p>
             </div>
             <div className="flex  flex-row justify-start items-center gap-1">
               <input
                 type="checkbox"
                 onChange={toggleCategory}
+                className=" w-8 h-8"
                 value={"electronics"}
               />
-              <p>Electronics</p>
+              <p className="text-lg font-semibold">Electronics</p>
             </div>
           </div>
         </div>
