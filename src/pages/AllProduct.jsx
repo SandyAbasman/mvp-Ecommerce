@@ -24,13 +24,13 @@ const AllProduct = () => {
 
     if (showSearch && search) {
       productCopy = productCopy.filter((item) =>
-        item.title.toLowerCase().includes(search.toLowerCase())
+        item.title.toLowerCase().includes(search.toLowerCase()),
       );
     }
 
     if (category.length > 0) {
       productCopy = productCopy.filter((item) =>
-        category.includes(item.category)
+        category.includes(item.category),
       );
     }
     setFilterProduct(productCopy);
@@ -67,45 +67,45 @@ const AllProduct = () => {
   }, [sortType]);
 
   return (
-    <div className=" w-full h-auto flex flex-col gap-1 sm:gap-10 px-32 border-t">
+    <div className="flex h-auto w-full flex-col gap-1 border-t px-32 py-20 sm:gap-10">
       {/* Filter Options */}
-      <div className="flex flex-row justify-between items-center">
+      <div className="flex flex-row items-center justify-between">
         <div className="min-w-60">
           <p>Filters</p>
-          <div className="border flex gap-8 flex-row ">
+          <div className="flex flex-row gap-8 border">
             <p className="text-lg font-semibold">Categories</p>
-            <div className="flex  flex-row justify-start items-center gap-1">
+            <div className="flex flex-row items-center justify-start gap-1">
               <input
                 type="checkbox"
                 onChange={toggleCategory}
-                className=" w-8 h-8"
+                className="h-8 w-8"
                 value={"men's clothing"}
               />
               <p className="text-lg font-semibold">Men</p>
             </div>
-            <div className="flex  flex-row justify-start items-center gap-1">
+            <div className="flex flex-row items-center justify-start gap-1">
               <input
                 type="checkbox"
                 onChange={toggleCategory}
-                className=" w-8 h-8"
+                className="h-8 w-8"
                 value={"women's clothing"}
               />
               <p className="text-lg font-semibold">Women</p>
             </div>
-            <div className="flex  flex-row justify-start items-center gap-1">
+            <div className="flex flex-row items-center justify-start gap-1">
               <input
                 type="checkbox"
                 onChange={toggleCategory}
-                className=" w-8 h-8"
+                className="h-8 w-8"
                 value={"jewelery"}
               />
               <p className="text-lg font-semibold">jewelery</p>
             </div>
-            <div className="flex  flex-row justify-start items-center gap-1">
+            <div className="flex flex-row items-center justify-start gap-1">
               <input
                 type="checkbox"
                 onChange={toggleCategory}
-                className=" w-8 h-8"
+                className="h-8 w-8"
                 value={"electronics"}
               />
               <p className="text-lg font-semibold">Electronics</p>
@@ -124,7 +124,7 @@ const AllProduct = () => {
         </div>
       </div>
 
-      <div className="w-full  grid grid-cols-4 flex-wrap gap-4 justify-items-center  ">
+      <div className="grid w-full grid-cols-4 flex-wrap justify-items-center gap-4">
         {filterProduct.map((item, index) => {
           return (
             <ProductItem

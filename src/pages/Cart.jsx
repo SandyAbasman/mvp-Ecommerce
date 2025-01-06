@@ -39,12 +39,12 @@ const Cart = () => {
         return (
           <div className="flex flex-row" key={index}>
             <img
-              className="w-10 h-10"
+              className="h-10 w-10"
               src={productData.image}
               alt={productData.title}
             />
             <p>{productData.title}</p>
-            <p className="text-5xl ">{item.quantity}</p>
+            <p className="text-5xl">{item.quantity}</p>
           </div>
         );
       })}

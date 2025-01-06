@@ -16,9 +16,9 @@ const Carousel = () => {
       isPlaying={true}
       interval={5000}
     >
-      <div className="w-full h-auto   flex flex-row justify-between items-center">
+      <div className="flex h-auto w-full flex-row items-center justify-between">
         {/* <ButtonBack>Back</ButtonBack> */}
-        <Slider className="w-full h-[34rem]  ">
+        <Slider className="h-[34rem] w-full">
           {/* <Slide index={0}>
             <img src={"/shopHerobg1.png"} alt="img" />
           </Slide> */}

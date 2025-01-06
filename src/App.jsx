@@ -20,8 +20,8 @@ const router = createBrowserRouter(
       <Route path="/cart" element={<Cart />} />
       <Route path="/product/:productId" element={<Product />} />
       <Route path="*" element={<Not_found />} />
-    </Route>
-  )
+    </Route>,
+  ),
 );
 
 function App() {

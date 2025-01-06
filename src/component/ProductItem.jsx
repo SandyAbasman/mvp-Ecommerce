@@ -8,45 +8,45 @@ const ProductItem = ({ id, image, name, price, rating }) => {
   const { currency, addToCart } = useContext(shopContext);
 
   return (
-    <div className=" flex flex-col motion-preset-compress justify-start items-start gap-4">
+    <div className="flex flex-col items-start justify-start gap-4">
       <Link to={`/product/${id}`}>
-        <div className="w-64 h-60 p-4 hover:shadow-2xl hover:animate-pulse duration-75 bg-[#F3F3F3] rounded-lg ">
+        <div className="h-60 w-64 rounded-xl bg-[#F3F3F3]/40 p-8 duration-200 hover:bg-[#F3F3F3]/10 hover:p-0">
           <img
             src={image}
-            className="w-full mix-blend-multiply   h-full"
+            className="h-full w-full mix-blend-multiply"
             alt={name}
           />
         </div>
       </Link>
 
-      <div className="w-full  h-auto flex flex-row justify-between items-center gap-2 ">
-        <div className=" w-1/2 h-auto flex flex-col gap-2 justify-start items-start">
-          <p className="text-lg  font-thin  text-nowrap text-center">
+      <div className="flex h-auto w-full flex-row items-center justify-between gap-2">
+        <div className="flex h-auto w-1/2 flex-col items-start justify-start gap-2">
+          <p className="text-nowrap text-center text-lg font-thin">
             {name.split(" ").slice(0, 3).join(" ")}
           </p>
-          <p className=" font-semibold text-lg  flex flex-row gap-2 items-center text-center ">
+          <p className="flex flex-row items-center gap-2 text-center text-lg font-semibold">
             {currency}
             {price}
-            <span className="text-xs text-nowrap text-black/30">
+            <span className="text-nowrap text-xs text-black/30">
               {rating.count - 10} - sold
             </span>
           </p>
-          <p className=" text-black/50 text-md">Rating: {rating.rate}</p>
+          <p className="text-md text-black/50">Rating: {rating.rate}</p>
         </div>
 
-        <div className="w-1/2 h-auto  flex flex-row justify-end ">
+        <div className="flex h-auto w-1/2 flex-row justify-end">
           <span
             onClick={() => addToCart(id)}
-            className="w-8 h-8 cursor-pointer hover:bg-blue-500 rounded-full border-2 p-1 flex flex-row justify-center text-blue-500 border-blue-500 hover:text-white"
+            className="flex h-8 w-8 cursor-pointer flex-row justify-center rounded-full border-2 border-blue-500 p-1 text-blue-500 hover:bg-blue-500 hover:text-white"
           >
             <BsCart3 />
           </span>
         </div>
       </div>
 
-      <div className="w-full h-auto">
+      <div className="h-auto w-full">
         <Link to={`/product/${id}`}>
-          <button className="w-full h-auto font-bold hover:bg-white hover:border-blue-500  border-2 hover:text-blue-500 text-white text-lg rounded-md bg-blue-500 p-2">
+          <button className="h-auto w-full rounded-md border-2 bg-blue-500 p-2 text-lg font-bold text-white hover:border-blue-500 hover:bg-white hover:text-blue-500">
             Buy now
           </button>
         </Link>

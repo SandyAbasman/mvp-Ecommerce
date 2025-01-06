@@ -4,26 +4,26 @@ import Carousel from "./Carousel";
 function Hero() {
   const navigate = useNavigate();
   return (
-    <div className="w-full h-auto  pt-10 bg-[#00B3DC] mix-blend-multiply   justify-between items-center  px-36  flex flex-row ">
-      <div className="w-1/2 h-auto flex flex-col gap-3 motion-preset-slide-right  motion-duration-8000">
-        <div className="w-full h-auto  flex flex-col gap-4 ">
-          <p className="text-2xl text-white font-semi-bold">Welcome to Store</p>
-          <h2 className="text-7xl font-bold text-white text">NEW COLLECTION</h2>
-          <p className="text-2xl text-white font-semi-bold">
+    <div className="flex h-auto w-full flex-row items-center justify-between bg-[#00B3DC] px-36 pt-24 mix-blend-multiply">
+      <div className="motion-duration-8000 motion-preset-slide-right flex h-auto w-1/2 flex-col gap-3">
+        <div className="flex h-auto w-full flex-col gap-4">
+          <p className="font-semi-bold text-2xl text-white">Welcome to Store</p>
+          <h2 className="text text-7xl font-bold text-white">NEW COLLECTION</h2>
+          <p className="font-semi-bold text-2xl text-white">
             We know how large objects will act,
             <br /> but things on a small scale.
           </p>
         </div>
-        <div className="w-full h-auto">
+        <div className="h-auto w-full">
           <button
             onClick={() => navigate("/allproduct")}
-            className="  bg-[#2DC071]  border-4 border-[#2DC071] text-[1.3rem] font-bold  px-[2.5rem] py-[0.9375rem] text-white rounded-sm hover:bg-opacity-50  motion-duration-8000  "
+            className="motion-duration-8000 rounded-sm border-4 border-[#2DC071] bg-[#2DC071] px-[2.5rem] py-[0.9375rem] text-[1.3rem] font-bold text-white hover:bg-opacity-50"
           >
             SHOP NOW
           </button>
         </div>
       </div>
-      <div className="w-1/2 h-auto  motion-preset-slide-left  motion-duration-8000 ">
+      <div className="motion-duration-8000 motion-preset-slide-left h-auto w-1/2">
         <Carousel />
       </div>
     </div>

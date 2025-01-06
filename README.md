@@ -7,7 +7,6 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-
 ;; // import { createBrowserRouter, createRoutesFromElements } from "react-router";
 ;; // import { BrowserRouter as Router, Route, Switch, createBrowserRouter } from "react-router-dom";
 ;; // import SplashScreen from './screens/SplashScreen';
@@ -22,27 +21,19 @@ Currently, two official plugins are available:
 ;; // import UserProfileScreen from './screens/UserProfileScreen';
 ;; // import SettingsScreen from './screens/SettingsScreen';
 
+;; // const approuter = createBrowserRouter={[
+;; // {
+;; // path:,
+;; // element:,
+;; // },
 
-;;   // const approuter = createBrowserRouter={[
-;;   //   {
-;;   //     path:,
-;;   //     element:,
-;;   //   }, 
-
-;;   // ]}
-
-
-
+;; // ]}
 
 ;; function App() {
 
- 
-;;   return <div>
+;; return <div>
 
-
-
-
-;;   </div>;
+;; </div>;
 ;; }
 
 ;; export default App;

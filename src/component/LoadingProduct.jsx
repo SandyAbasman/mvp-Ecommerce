@@ -1,21 +1,21 @@
 const LoadingProduct = () => {
-  const n = 4;
+  const n = 5;
   return (
-    <div className="w-full h-[20rem]    flex-row grid grid-cols-4 gap-8 justify-start items-start px-32">
+    <div className="grid h-[20rem] w-full grid-cols-5 flex-row items-start justify-start gap-8">
       {[...Array(n)].map((e, i) => (
         <div
           key={i}
-          className="motion-preset-compress w-full  h-auto flex-col flex gap-6 justify-between item-start"
+          className="item-start motion-preset-compress flex h-auto w-full flex-col justify-between gap-6"
         >
-          <div className="flex flex-wrap my-2">
-            <div className="py-2 w-full">
-              <div className="h-full  border-gray-200 rounded-lg overflow-hidden">
-                <div className="lg:h-48 bg-black/10 md:h-40 w-[30rem] object-cover  object-center"></div>
+          <div className="my-2 flex flex-wrap">
+            <div className="w-full py-2">
+              <div className="h-full overflow-hidden rounded-lg border-gray-900">
+                <div className="w-[40rem] bg-black/10 object-cover object-center md:h-40 lg:h-48"></div>
                 <div className="py-6">
-                  <h2 className="bg-gray-400 animate-pulse h-4 w-full mb-2"></h2>
-                  <h1 className="w-2/3 mb-4 h-6 animate-pulse bg-gray-500"></h1>
-                  <p className="leading-relaxed mb-3 w-1/3 h-3 animate-pulse bg-gray-400"></p>
-                  <p className="leading-relaxed mb-3 w-full h-10 animate-pulse rounded-md bg-gray-400"></p>
+                  <h2 className="mb-2 h-4 w-full animate-pulse bg-gray-400"></h2>
+                  <h1 className="mb-4 h-6 w-2/3 animate-pulse bg-gray-500"></h1>
+                  <p className="mb-3 h-3 w-1/3 animate-pulse bg-gray-400 leading-relaxed"></p>
+                  <p className="mb-3 h-10 w-full animate-pulse rounded-md bg-gray-400 leading-relaxed"></p>
                   {/* <p className="leading-relaxed mb-3 w-1/2 h-3 animate-pulse bg-gray-400"></p> */}
                   {/* <div className="flex items-center flex-wrap ">
                     <a className="bg-indigo-300 h-4 animate-pulse mt-2 w-32 inline-flex items-center md:mb-2 lg:mb-0"></a>

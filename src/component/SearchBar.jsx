@@ -19,16 +19,16 @@ const SearchBar = () => {
   }, [location]);
 
   return showSearch && visible ? (
-    <div className=" w-full border-t border-b bg-gray-50 text-center">
-      <div className=" w-1/2 inline-flex  item-center justify-center  px-5 py-3 ">
+    <div className="w-full border-b border-t bg-gray-50 text-center">
+      <div className="item-center inline-flex w-1/2 justify-center px-5 py-3">
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           type="text"
           placeholder="search"
-          className="flex-1 w-1/2 outline-none border py-2 px-2 border-gray-400 rounded-full bg-inherit text-sm"
+          className="w-1/2 flex-1 rounded-full border border-gray-400 bg-inherit px-2 py-2 text-sm outline-none"
         />
-        <CiSearch className="w-8 h-6" />
+        <CiSearch className="h-6 w-8" />
         <p onClick={() => setShowSearch(false)}>X</p>
       </div>
     </div>

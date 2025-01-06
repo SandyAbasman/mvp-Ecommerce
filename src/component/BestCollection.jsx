@@ -13,7 +13,7 @@ function BestCollection() {
   }, [products]);
 
   return (
-    <div className="w-full h-auto flex  flex-col justify-start px-32 gap-6 ">
+    <div className="flex h-auto w-full flex-col justify-start gap-6 px-32">
       <Title
         title1="Featured Products"
         title2="BESTSELLER PRODUCTS"
@@ -23,8 +23,8 @@ function BestCollection() {
       {bestCollection.length === 0 ? (
         <LoadingProduct />
       ) : (
-        <div className="w-full h-auto">
-          <div className=" w-full  grid grid-cols-4 flex-wrap  gap-20 justify-items-stretch ">
+        <div className="h-auto w-full">
+          <div className="grid w-full grid-cols-4 flex-wrap justify-items-stretch gap-20">
             {bestCollection.map((item) => (
               <ProductItem
                 key={item.id}

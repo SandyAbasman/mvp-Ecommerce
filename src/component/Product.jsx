@@ -38,19 +38,19 @@ const Product = () => {
     <LoadingProduct />
   ) : (
     <div>
-      <div className=" w-full h-auto flex flex-row justify-start items-start px-40">
-        <div className="w-1/2 h-auto flex flex-row justify-center bg-[#ffff]/20">
+      <div className="flex h-auto w-full flex-row items-start justify-start px-40">
+        <div className="flex h-auto w-1/2 flex-row justify-center bg-[#ffff]/20">
           <img
-            className="w-1/2 h-auto "
+            className="h-auto w-1/2"
             src={productData.image}
             alt={productData.title}
           />
         </div>
 
-        <div className="w-1/2 h-full flex flex-col justify-between items-start ">
+        <div className="flex h-full w-1/2 flex-col items-start justify-between">
           <div className="flex flex-col gap-2">
-            <p className="text-2xl font-semi-bold">{productData.title}</p>
-            <div className="flex flex-row gap">
+            <p className="font-semi-bold text-2xl">{productData.title}</p>
+            <div className="gap flex flex-row">
               <div className="flex flex-row gap-2 pb-4">
                 {stars.map((_, index) => {
                   return (
@@ -71,29 +71,29 @@ const Product = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-1 mb-20">
-            <p className="text-3xl font-semi-bold">
+          <div className="mb-20 flex flex-col gap-1">
+            <p className="font-semi-bold text-3xl">
               {currency}
               {productData.price}
             </p>
-            <p className="font-bold text-black/50 text-sm ">
+            <p className="text-sm font-bold text-black/50">
               Availiability :
-              <span className="text-blue-400 font-bold text-sm">
+              <span className="text-sm font-bold text-blue-400">
                 {productData.rating.count > 0 ? " in-Stock" : " out of stock"}
               </span>
             </p>
           </div>
 
           <div className="mb-20">
-            <p className="text-md font-normal text-black/50 leading-8">
+            <p className="text-md font-normal leading-8 text-black/50">
               {productData.description}
             </p>
           </div>
 
-          <div className="w-full h-auto">
+          <div className="h-auto w-full">
             <button
               onClick={() => addToCart(productData.id)}
-              className="bg-black p-4 w-full h-auto text-white"
+              className="h-auto w-full bg-black p-4 text-white"
             >
               Add to cart{" "}
             </button>

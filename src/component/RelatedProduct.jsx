@@ -20,7 +20,7 @@ const RelatedProduct = ({ category }) => {
   }, [products, category]);
 
   return (
-    <div className="w-full h-auto">
+    <div className="h-auto w-full">
       <Title
         title2={"RELATED PRODUCTS"}
         description={
@@ -30,7 +30,7 @@ const RelatedProduct = ({ category }) => {
       {related.length === 0 ? (
         <LoadingProduct />
       ) : (
-        <div className="w-full grid grid-cols-4 flex-wrap  gap-8 justify-items-center">
+        <div className="grid w-full grid-cols-4 flex-wrap justify-items-center gap-8">
           {related.map((item, index) => (
             <div key={index}>
               <ProductItem

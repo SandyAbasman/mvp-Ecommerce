@@ -4,11 +4,11 @@ import Stats from "../component/Stats";
 
 const Home = () => {
   return (
-    <div className="w-screen h-auto flex flex-col justify-start items-center  gap-4 ">
+    <div className="flex h-auto w-screen flex-col items-center justify-start gap-4">
       <Hero />
+      <Stats />
       <div>
         <BestCollection />
-        <Stats />
       </div>
     </div>
   );
